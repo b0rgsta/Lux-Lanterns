@@ -1,0 +1,43 @@
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(Black, rgba(234, 160, 37, 0.36), rgba(246, 94, 39, 0.29));
+}
+
+.message-form {
+  display: grid;
+  justify-content: center;
+  margin-top: 50px;
+}
+.message-form .form-input {
+  background-color: #c0c0c0;
+  text-align: left;
+  padding: 1px;
+  vertical-align: top;
+  border-bottom-color: #ecaa9b;
+}
+.message-form .form-input:focus {
+  outline: none !important;
+  border-color: #efa254;
+  box-shadow: 0 0 10px #d56a26;
+}
+.message-form textarea:focus {
+  outline: none !important;
+  border-color: #efa254;
+  box-shadow: 0 0 10px #d56a26;
+}
+.message-form .btn {
+  background-color: #e57626;
+  width: 200px;
+  height: 25px;
+}
+.message-form label {
+  color: darkgray;
+}
+
+#comment {
+  text-align: left;
+  vertical-align: top;
+}
+
+
+/*# sourceMappingURL=contact-us.css.map */

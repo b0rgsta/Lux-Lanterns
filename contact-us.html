@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lanterns - Contact Us</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="contact-us.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li class="hvr-bob"><a href="index.html">Home</a></li>
+        <li class="hvr-bob"><a href="gallery.html">Gallery</a></li>
+        <li class="hvr-bob"><a href="contact-us.html">Contact-Us</a></li>
+    </ul>
+</nav>
+<main>
+    <form class="message-form" onsubmit="return addData(event)">
+        <label for="fname">First name:</label><br>
+        <input class="form-input" type="text" id="fname" name="fname" required><br>
+        <label for="lname">Last name:</label><br>
+        <input class="form-input" type="text" id="lname" name="lname"><br>
+        <label for="phone">Phone number:</label><br>
+        <input class="form-input" type="text" id="phone" name="phone"><br>
+        <label for="email">Email:</label><br>
+        <input class="form-input" type="email" id="email" name="email" required><br>
+        <label for="comment">Message:</label><br>
+        <textarea placeholder="Type your message here" class="form-input" id="comment" rows="10" cols="50"
+                  name="comment" required></textarea>
+        <br>
+        <button class="btn" type="submit">Send my message!</button>
+    </form>
+</main>
+<footer>
+    &copy; Copyright
+    <script>document.write(String(new Date().getFullYear()));</script>
+    , Andrew Borg.
+</footer>
+
+</body>
+<script>
+    function showImage(image) {
+        document.getElementById("overlay-image").src = image.src
+        document.getElementById("overlay").style.display = "flex"
+    }
+
+    function hideImage() {
+        document.getElementById("overlay").style.display = "none"
+    }
+
+    [...document.querySelectorAll('a')].forEach(e => {
+        e.href = e.href + window.location.search;
+    })
+
+    function addData(event) {
+        let userInput = {
+            time: Date.now(),
+            firstName: document.getElementById("fname").value,
+            lastName: document.getElementById("lname").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            message: document.getElementById("comment").value
+        }
+        let userDataArray = [];
+        if (window.sessionStorage.getItem("userData")) {
+            userDataArray =
+                JSON.parse(window.sessionStorage.getItem("userData"))
+        }
+
+        userDataArray.push(userInput);
+        window.sessionStorage.setItem(
+            "userData",
+            JSON.stringify(userDataArray)
+        )
+        console.log(userDataArray);
+        alert("Thank you! Your message has been sent.")
+    }
+
+</script>
+</html>

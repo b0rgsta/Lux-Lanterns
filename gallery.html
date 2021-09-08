@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lanterns</title>
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+<nav>
+    <ul>
+        <li class="hvr-bob"><a href="index.html">Home</a></li>
+        <li class="hvr-bob"><a href="gallery.html">Gallery</a></li>
+        <li class="hvr-bob"><a href="contact-us.html">Contact-Us</a></li>
+    </ul>
+</nav>
+<main>
+    <div class="images">
+        <img onclick="showImage(this); return false;" class="top-line"
+             src="https://scontent.fsyd3-1.fna.fbcdn.net/v/t1.6435-9/224040157_3018567508462288_5851147001296488497_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=ilVAwawiHk0AX8axHlr&tn=MMckr0CL2o27ykwa&_nc_ht=scontent.fsyd3-1.fna&oh=72bc1a3b2d2edad510b129ac08b79a3c&oe=61509225"
+             alt="">
+        <img onclick="showImage(this); return false;" class="top-line"
+             src="https://scontent.fsyd3-1.fna.fbcdn.net/v/t1.6435-9/221168687_3018567558462283_105834265027895517_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=-mPQ8sMTUZkAX8Q9vh-&_nc_ht=scontent.fsyd3-1.fna&oh=d5f2392af0fd3bad765686406d54bcd0&oe=6153F307"
+             alt="">
+        <img onclick="showImage(this); return false;"
+             src="https://scontent.fsyd3-1.fna.fbcdn.net/v/t1.6435-9/220452913_3018567448462294_2943347565717187599_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=Skttv2eyiEcAX9c9R1q&_nc_ht=scontent.fsyd3-1.fna&oh=19418303f1f1475bd13190ab6a205c53&oe=615176ED"
+             alt="kjnl">
+        <img onclick="showImage(this); return false;"
+             src="https://scontent.fsyd3-1.fna.fbcdn.net/v/t1.6435-9/219365156_3018573888461650_6155652380196999191_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=u5m1tVlxgMQAX9ONE1y&_nc_oc=AQlP-IkuOlsxA2EhexVasABoabhYGBD8AH1rav5ISV6nk2vG4tdppiz4CiSDylJuSlo&_nc_ht=scontent.fsyd3-1.fna&oh=766787b7ab6f9a471071009370b7cb73&oe=6152067E"
+             alt="">
+    </div>
+</main>
+<footer>
+    &copy; Copyright
+    <script>document.write(String(new Date().getFullYear()));</script>, Andrew Borg.
+</footer>
+
+<div onclick="hideImage()" id="overlay">
+    <img width="600" id="overlay-image"
+         src="https://scontent.fsyd3-1.fna.fbcdn.net/v/t1.6435-9/220452913_3018567448462294_2943347565717187599_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=Skttv2eyiEcAX9c9R1q&_nc_ht=scontent.fsyd3-1.fna&oh=19418303f1f1475bd13190ab6a205c53&oe=615176ED"
+         alt="">
+
+</div>
+</body>
+<script>
+    function showImage(image) {
+        document.getElementById("overlay-image").src = image.src
+        document.getElementById("overlay").style.display = "flex"
+    }
+
+    function hideImage() {
+        document.getElementById("overlay").style.display = "none"
+    }
+
+    [...document.querySelectorAll('a')].forEach(e => {
+        e.href = e.href + window.location.search;
+    })
+</script>
+</html>
